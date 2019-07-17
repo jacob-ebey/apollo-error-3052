@@ -9,7 +9,7 @@ relayed through to the client.
 
 ## Steps
 
-1. ` Create a new apollo engine project and setup your .env file with the `ENGINE_API_KEY`.
+1. Create a new apollo engine project and setup your .env file with the `ENGINE_API_KEY`.
 2. Initial Run
     - Comment out line 4 of `src/gateway.js`
     - Uncomment lines 6-20 of `src/gateway.js`
