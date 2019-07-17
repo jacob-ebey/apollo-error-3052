@@ -1,0 +1,29 @@
+{
+  "name": "apollo-error-3052",
+  "version": "1.0.0",
+  "description": "Demonstrating Apollo issue #3052",
+  "author": "Jacob Ebey",
+  "license": "ISC",
+  "scripts": {
+    "start": "run-p dev:*",
+    "dev:gateway": "dotenv -- cross-env NODE_ENV=development PORT=4000 nodemon ./src/gateway.js",
+    "dev:serviceA": "cross-env NODE_ENV=development PORT=4001 nodemon ./src/serviceA.js",
+    "dev:serviceB": "cross-env NODE_ENV=development PORT=4002 nodemon ./src/serviceB.js",
+    "push": "run-p push:*",
+    "push:serviceA": "apollo service:push --serviceName=\"serviceA\" --endpoint=\"http://localhost:4001\" --serviceURL=\"http://localhost:4001\"",
+    "push:serviceB": "apollo service:push --serviceName=\"serviceB\" --endpoint=\"http://localhost:4002\" --serviceURL=\"http://localhost:4002\""
+  },
+  "dependencies": {
+    "@apollo/federation": "^0.7.0",
+    "@apollo/gateway": "^0.7.1",
+    "apollo-server": "^2.7.0",
+    "graphql": "^14.4.2"
+  },
+  "devDependencies": {
+    "apollo": "^2.16.0",
+    "cross-env": "^5.2.0",
+    "dotenv-cli": "^2.0.1",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
